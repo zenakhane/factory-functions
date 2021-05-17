@@ -10,13 +10,13 @@ var randCol = document.querySelector(".orange")
 var initRadioButton = radioBtnFactory()
 
 function radioButtonBill() {
-    var typeofBillEntered = itemTypeRadio.value
-    initRadioButton.radioBtnBill(itemTypeRadio)
+    var typeOfBillEntered = itemTypeRadio.value
+    initRadioButton.radioBtnBill(typeOfBillEntered)
     totalOfRadio.classList.add(initRadioButton.radioColor())
 
-totalCallsElement.innerHTML = initRadioButton.getCallCost;
-totalSmsElement.innerHTML = initRadioButton.getSmsCost;
-totalOfRadio.innerHTML = initRadioButton.getCostTotal;
+totalCallsElement.innerHTML = initRadioButton.getCallCost();
+totalSmsElement.innerHTML = initRadioButton.getSmsCost();
+totalOfRadio.innerHTML = initRadioButton.getCostTotal();
 
 
 }

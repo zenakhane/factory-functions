@@ -16,7 +16,7 @@ describe('Text Bill', function () {
         init.textBillCalculate('sms')
         init.textBillCalculate('sms')
         assert.equal(2.25, init.getSmsTotal())
-        assert.equal(2.25, init.getSmsTotal())
+        assert.equal(2.25, init.getTotalCost())
 
     })
 
