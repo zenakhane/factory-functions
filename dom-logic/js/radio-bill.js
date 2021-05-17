@@ -7,17 +7,13 @@ var totalSmsElement = document.querySelector(".smsTotalTwo")
 var totalOfRadio = document.querySelector(".allTotals")
 var randCol = document.querySelector(".orange")
 //create a variable that will keep track of the total bill
-var initRadioButton = radioBtnFactory()
+
 
 function radioButtonBill() {
-    var typeOfBillEntered = itemTypeRadio.value
-    initRadioButton.radioBtnBill(typeOfBillEntered)
-    totalOfRadio.classList.add(initRadioButton.radioColor())
+    
 
-totalCallsElement.innerHTML = initRadioButton.getCallCost();
-totalSmsElement.innerHTML = initRadioButton.getSmsCost();
-totalOfRadio.innerHTML = initRadioButton.getCostTotal();
-
-
+    totalCallsElement.innerHTML = totalCalls.toFixed(2);
+    totalSmsElement.innerHTML = totalSms.toFixed(2);
+    totalOfRadio.innerHTML = costTotal.toFixed(2);
 }
 radioAddBtn.addEventListener('click', radioButtonBill);

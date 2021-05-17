@@ -7,7 +7,7 @@ var billStringElement = document.querySelector(".billString");
 var colorElement1 = document.querySelector(".total")
 //get a reference to the billString
 
-var initCalculateFunction = calculateBill()
+
 
 function calculateBtnClicked() {
     // get the string entered in the textArea
@@ -15,14 +15,12 @@ function calculateBtnClicked() {
     //split the string
     // a variable for the total phone bill.
 
-    var what = initCalculateFunction.calculateBillEvent(billString)
-        
+    // var what = initCalculateFunction.calculateBillEvent(billString)
+    var roundedBillTotal = billTotal.toFixed(2);
+    billTotalElement.innerHTML = roundedBillTotal;
+    console.log(roundedBillTotal)  
     
-    //round to two decimals
-    // var roundedBillTotal = billTotal.toFixed(2);
-    // initCalculateFunction.calculateBillEvent(billItems) = roundedBillTotal;
-    // billTotalElement.classList.add(initCalculateFunction.color())
-    
+   
     billTotalElement.innerHTML = what
     billTotalElement.classList.remove('danger')
     billTotalElement.classList.remove('warning')
