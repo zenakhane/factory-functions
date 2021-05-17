@@ -7,7 +7,8 @@ var billStringElement = document.querySelector(".billString");
 var colorElement1 = document.querySelector(".total")
 //get a reference to the billString
 
-var initCalculateFunction = calculateBillFactory()
+var initCalculateFunction = calculateBill()
+
 function calculateBtnClicked() {
     // get the string entered in the textArea
     var billString = billStringElement.value;

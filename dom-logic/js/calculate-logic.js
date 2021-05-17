@@ -1,4 +1,4 @@
-function calculateBillFactory(){
+function calculateBill(){
     var billTotal = 0;
     var colorReturn = ''
 function calculateBillEvent(billString){
