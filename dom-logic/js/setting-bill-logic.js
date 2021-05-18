@@ -56,7 +56,7 @@ function billWithSettings() {
     function sendSms() {
         if (!hasReachedCriticalLevel()) {
             smsCostTotal += theSmsCost
-        }
+       }
 
     }
     function hasReachedCriticalLevel() {
