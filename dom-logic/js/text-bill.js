@@ -17,23 +17,6 @@ function textBillTotal() {
    // get the value entered in the billType textfield
    var billTypeEntered = textType.value.trim();
    // update the correct total
-   if (billTypeEntered === "call") {
-      callsTotal += 2.75
-      totalCost += 2.75
-   }
-   else if (billTypeEntered === "sms") {
-      smsTotal += 0.75;
-      totalCost += 0.75
-   }
-   if (totalCost >= 30 && totalCost < 50) {
-      // adding the danger class will make the text red
-
-      totalCostElem.classList.add("warning");
-   }
-   else if (totalCost >= 50) {
-      totalCostElem.classList.add("danger");
-      // colorElement.classList.add("danger");
-   }
    
    //update the totals that is displayed on the screen.
    callsTotalElem.innerHTML = callsTotal.toFixed(2);
