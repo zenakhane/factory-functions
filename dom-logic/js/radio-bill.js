@@ -7,23 +7,26 @@ var totalSmsElement = document.querySelector(".smsTotalTwo")
 var totalOfRadio = document.querySelector(".allTotals")
 var randCol = document.querySelector(".orange")
 //create a variable that will keep track of the total bill
-var totalCalls = 0;
-var totalSms = 0;
-var costTotal = 0;
+var radioInit = radioBtnFactory()
+
 function radioButtonBill() {
     var inspectedRadioBtn = document.querySelector("input[name='billItemType']:checked");
     if (inspectedRadioBtn) {
-        console.log(inspectedRadioBtn)
-        var billItemTypeBtn = inspectedRadioBtn.value.trim()
         
+        radioInit.radioBtnBill(inspectedRadioBtn.value)
     }
-    // update the correct total
-    //update the totalDs that is displayed on the screen.
-    totalCallsElement.innerHTML = totalCalls.toFixed(2);
-    totalSmsElement.innerHTML = totalSms.toFixed(2);
-    totalOfRadio.innerHTML = costTotal.toFixed(2);
-    console.log(totalCalls)
-    console.log(totalSms)
-    console.log(totalOfRadio)
+    totalCallsElement.innerHTML = radioInit.getCallCost();
+    totalSmsElement.innerHTML = radioInit.getSmsCost();
+    totalOfRadio.innerHTML = radioInit.getCostTotal();
+    // randCol.innerHTML = radioInit.radioColor();
+    colorAdd()
+  
 }
+function colorAdd(){
+    totalOfRadio.classList.remove("warning");
+    totalOfRadio.classList.remove("danger");
+    totalOfRadio.classList.add(radioInit.radioColor())
+}
+
+
 radioAddBtn.addEventListener('click', radioButtonBill);

@@ -22,11 +22,10 @@ function radioBtnFactory() {
     }
 
     function getSmsCost() {
-        return totalSms.toFixed(2)
+        return totalSms.toFixed(2);
     }
-
     function getCostTotal() {
-        return totalCalls + totalSms
+        return totalCalls + totalSms; 
     }
 
     function radioColor() {

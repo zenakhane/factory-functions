@@ -23,13 +23,14 @@ function textBillFactory(){
         return smsTotal.toFixed(2)
     }
 
-    function getTotalCost(){
+    function getAllTotalCost(){
         return totalCost.toFixed(2)
     }
 
     function colors(){
         if (totalCost >= 30 && totalCost < 50){
             return 'warning'
+            
         } else if (totalCost >= 50){
             return 'danger'
         }
@@ -38,7 +39,7 @@ function textBillFactory(){
     return {
         textBillCalculate,
         getCallsTotal,
-        getTotalCost,
+        getAllTotalCost,
         getSmsTotal,
         colors
     }

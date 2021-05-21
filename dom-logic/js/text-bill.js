@@ -9,21 +9,27 @@ var smsTotalElem = document.querySelector(".smsTotalOne")
 var totalCostElem = document.querySelector(".totalOne")
 var colorElement = document.querySelector(".color")
 // these variables are global and defined outside of the Add button event listener.
-var callsTotal = 0;
-var smsTotal = 0;
-var totalCost = 0
+
 //add an event listener for when the add button is pressed
+var textBill = textBillFactory()
+
 function textBillTotal() {
-   // get the value entered in the billType textfield
-   var billTypeEntered = textType.value.trim();
-   // update the correct total
-   
-   //update the totals that is displayed on the screen.
-   callsTotalElem.innerHTML = callsTotal.toFixed(2);
-   smsTotalElem.innerHTML = smsTotal.toFixed(2);
-   totalCostElem.innerHTML = totalCost.toFixed(2);
-   console.log(callsTotal)
-   console.log(smsTotal)
-   console.log(totalCost)
+
+
+  var billTypeEntered = textType.value.trim()
+
+   textBill.textBillCalculate(billTypeEntered)
+
+   callsTotalElem.innerHTML = textBill.getCallsTotal();
+   smsTotalElem.innerHTML =textBill.getSmsTotal();
+   totalCostElem.innerHTML = textBill.getAllTotalCost();
+  //  colorElement.innerHTML = textBill.colors();
+  textColor()
+}
+
+function textColor(){
+  totalCostElem.classList.remove("warning");
+  totalCostElem.classList.remove("danger");
+  totalCostElem.classList.add(textBill.colors())
 }
 textTotalAddBtn.addEventListener('click', textBillTotal);
