@@ -19,21 +19,25 @@ function calculateBtnClicked() {
 
 function colorCal(){
     if (CalculateBill(billStringElement.value) >= 20 && CalculateBill(billStringElement.value) < 30) {
+        colorElement1.classList.remove("danger");
+        billTotalElement.classList.remove("danger");
         colorElement1.classList.add("warning");
         billTotalElement.classList.add("warning");
         console.log(colorElement1)
     } else if (CalculateBill(billStringElement.value) >= 30) {
-        billTotalElement.classList.add("danger");
-        colorElement1.classList.add("danger");
         billTotalElement.classList.remove("warning");
         colorElement1.classList.remove("warning");
-        console.log(colorElement1)
+        billTotalElement.classList.add("danger");
+        colorElement1.classList.add("danger");
+        
+       
     } else {
-        colorElement1.classList.remove("total");
-        billTotalElement.classList.remove("warning");
-        colorElement1.classList.remove("total");
+        colorElement1.classList.remove("danger");
         billTotalElement.classList.remove("danger");
-        console.log(colorElement1)
+
+        colorElement1.classList.remove("warning");
+        billTotalElement.classList.remove("warning");
+        
     }
 }
 
